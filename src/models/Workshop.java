@@ -1,7 +1,8 @@
 package models;
 
-import java.util.HashSet;
-
+/**
+ * Classe de entidade. Cria objetos de Workshop.
+ */
 public class Workshop extends Evento {
 	private int duracao;
 	
@@ -13,7 +14,6 @@ public class Workshop extends Evento {
 		this.id = proximoId;
 		this.pontuacao = duracao;
 		this.maxParticipantes = maxParticipantes;
-		this.participantes = new HashSet<Estudante>();
 	}
 	
 	@Override

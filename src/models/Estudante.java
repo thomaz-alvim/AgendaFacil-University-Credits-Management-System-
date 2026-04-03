@@ -2,6 +2,9 @@ package models;
 
 import java.util.Objects;
 
+/**
+ * Classe de entidade. Cria objetos de Estudantes.
+ */
 public class Estudante {
 	private String nome;
 	private String email;
@@ -14,6 +17,7 @@ public class Estudante {
 	}
 	
 	// Getters
+	
 	public String getNome() {return this.nome;}
 	
 	public String getEmail() {return this.email;}
@@ -23,6 +27,7 @@ public class Estudante {
 	public int getQuantidadePontos() {return this.quantidadePontos;}
 	
 	// Setters
+	
 	public void adicionarEvento() {
 		this.quantidadeEventos++;
 	}
@@ -30,6 +35,8 @@ public class Estudante {
 	public void adicionarPontos(int pontuacaoNova) {
 		this.quantidadePontos += pontuacaoNova;
 	}
+	
+	// Overrides
 	
 	@Override
 	public int hashCode() {

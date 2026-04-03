@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 import models.*;
 
+/**
+ * Controlador do sistema. Armazena estudantes e eventos em mapas.
+ */
 public class AgendaFacil {
 	private Map<String, Estudante> estudantes;
 	private Map<Integer, Evento> eventos;
@@ -18,7 +21,7 @@ public class AgendaFacil {
 	// Estudantes
 	
 	public boolean cadastrarEstudante(String nome, String email) {
-		if (email == null || email == "") {
+		if (email == null || email.isEmpty()) {
 			throw new NullPointerException("Nenhum email foi digitado.");
 		}
 		if (estudantes.containsKey(email)) {

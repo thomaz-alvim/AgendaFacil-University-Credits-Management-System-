@@ -1,7 +1,8 @@
 package models;
 
-import java.util.HashSet;
-
+/**
+ * Classe de entidade. Cria objetos de Oficina de Aprendizagem.
+ */
 public class OficinaAprendizagem extends Evento {
 	private int duracao;
 	private boolean certificacao;
@@ -15,7 +16,6 @@ public class OficinaAprendizagem extends Evento {
 		this.certificacao = certificacao;
 		this.id = proximoId;
 		this.maxParticipantes = maxParticipantes;
-		this.participantes = new HashSet<Estudante>();
 		
 		if (certificacao) {
 			this.pontuacao = duracao + 10;

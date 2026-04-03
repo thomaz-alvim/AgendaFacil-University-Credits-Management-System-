@@ -1,8 +1,12 @@
 package models;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Superclasse de 3 classes de entidade. Armazena seus participantes em um Set.
+ */
 public abstract class Evento {
 	protected String titulo;
 	protected String descricao;
@@ -10,25 +14,29 @@ public abstract class Evento {
 	protected int id;
 	protected int pontuacao;
 	protected int maxParticipantes;
-	protected Set<Estudante> participantes;
+	protected Set<Estudante> participantes = new HashSet<Estudante>();
+	
+	// Getters
 	
 	public int getPontuacao() {
 		return pontuacao;
 	}
+	
+	// Lógica
 	
 	public void adicionarParticipante(Estudante estudante) {
 		participantes.add(estudante);
 	}
 	
 	public boolean checarParticipante(Estudante estudante) {
-		if (participantes.contains(estudante)) {return true;}
-		return false;
+		return participantes.contains(estudante);
 	}
 	
 	public boolean checarLotado() {
-		if (participantes.size() == maxParticipantes) {return true;}
-		return false;
+		return participantes.size() >= maxParticipantes;
 	}
+	
+	// Overrides
 	
 	@Override
 	public int hashCode() {
